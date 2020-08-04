@@ -1,0 +1,26 @@
+<button class="btn btn-secondary" routerLink="/">Home</button>
+<hr>
+<form class="container" [formGroup]="editBookForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label class="font-weight-bold">Title: </label>
+    <input formControlName="title" class="form-control">
+  </div>
+  <div *ngIf="editBookForm.get('title').invalid" style="color: red;">
+    Lỗi Bạn Ưi
+  </div>
+  <div class="form-group">
+    <label class="font-weight-bold">Author: </label>
+    <input formControlName="author" class="form-control">
+  </div>
+  <div *ngIf="editBookForm.get('author').invalid" style="color: red;">Lỗi tên tác giả rùi kìa</div>
+  <div class="form-group">
+    <label class="font-weight-bold">Description: </label>
+    <input formControlName="description" class="form-control">
+  </div>
+  <div *ngIf="editBookForm.get('description').invalid" style="color: red;">Lỗi chú thích kìa cụ</div>
+
+  <div class="form-group">
+    <button class="btn btn-outline-primary" type="submit">Submit</button>
+  </div>
+</form>
+
